@@ -96,7 +96,7 @@
 <meta property="og:site_name" content="肩挑着草长莺飞">
 <meta property="og:description" content="搭建环境搭建博客到本地 下载 Node.js，并安装。 下载 Git， 并安装。 安装Hexo。 a. 搭建Hexo的环境，在Git Bash中运行以下命令： npm install -g hexo -cli b. 初始化Hexo，在Git Bash中运行以下命令：  123hexo init &amp;lt;folder&amp;gt;cd &amp;lt;folder&amp;gt;npm install  即为存放Hexo">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-24T15:58:41.526Z">
+<meta property="og:updated_time" content="2019-02-26T13:41:21.202Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何使用HEXO搭建个人博客">
 <meta name="twitter:description" content="搭建环境搭建博客到本地 下载 Node.js，并安装。 下载 Git， 并安装。 安装Hexo。 a. 搭建Hexo的环境，在Git Bash中运行以下命令： npm install -g hexo -cli b. 初始化Hexo，在Git Bash中运行以下命令：  123hexo init &amp;lt;folder&amp;gt;cd &amp;lt;folder&amp;gt;npm install  即为存放Hexo">
@@ -393,7 +393,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2.5k
+                  2.7k
                 </span>
               
 
@@ -409,7 +409,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  11
+                  12
                 </span>
               
             </div>
@@ -485,7 +485,29 @@
 <p>然后在<code>\themes\next\layout\_layout.swig</code>文件末尾添加：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 页面点击小红心 --&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;/js/src/clicklove.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
 <h3 id="隐藏底部的强力驱动"><a href="#隐藏底部的强力驱动" class="headerlink" title="隐藏底部的强力驱动"></a>隐藏底部的强力驱动</h3><p>找到<code>\blog\themes\next\layout\_partials\footer.swig</code>，注释掉24-41行这段代码即可。</p>
 <h3 id="增加字数统计和阅读时长功能"><a href="#增加字数统计和阅读时长功能" class="headerlink" title="增加字数统计和阅读时长功能"></a>增加字数统计和阅读时长功能</h3><p>先在站点目录下安装插件<code>npm install hexo-wordcount --save</code>，然后修改主题配置文件相应部分：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># Post wordcount display settings</span><br><span class="line"># Dependencies: https://github.com/willin/hexo-wordcount</span><br><span class="line">post_wordcount:</span><br><span class="line">  item_text: true</span><br><span class="line">  wordcount: true</span><br><span class="line">  min2read: true</span><br><span class="line">  totalcount: false</span><br><span class="line">  separated_meta: true</span><br></pre></td></tr></table></figure></p>
-<h3 id="添加二次元生物"><a href="#添加二次元生物" class="headerlink" title="添加二次元生物"></a>添加二次元生物</h3>
+<h3 id="添加二次元生物"><a href="#添加二次元生物" class="headerlink" title="添加二次元生物"></a>添加二次元生物</h3><p>其实就是在博客中添加Live 2D模型。首先安装插件：</p>
+<pre><code>npm install --save hexo-helper-live2d
+</code></pre><p>然后下载模型文件，可在<a href="https://github.com/xiazeyu/live2d-widget-models" target="_blank" rel="noopener">此处</a>选择你喜欢的模型：</p>
+<pre><code>npm install live2d-widget-model-shizuku
+</code></pre><p>然后在站点配置文件和主题配置文件中添加以下配置：</p>
+<pre><code>live2d:
+  enable: true
+  scriptFrom: local
+  pluginRootPath: live2dw/
+  pluginJsPath: lib/
+  pluginModelPath: assets/
+  tagMode: false
+  debug: false
+  model:
+    use: live2d-widget-model-shizuku
+  display:
+    position: right
+    width: 150
+    height: 300
+  mobile:
+    show: true
+</code></pre><p>注：model: use的值为你选择的模型名称，模型名称必须是你已下载的。</p>
+
       
     </div>
     
@@ -565,6 +587,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/02/26/markdown基本语法/" rel="prev" title="markdown基本语法">
+                markdown基本语法 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -648,7 +674,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -670,7 +696,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
